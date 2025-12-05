@@ -1,1 +1,1 @@
-# sinemki-isel-blok
+# sinemkiisel-blok
