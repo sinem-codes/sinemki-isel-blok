@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sinem Sayfa</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    padding: 0 10px;
+}
+.nav-left a { color: white; margin-right: 15px; font-size: 20px; text-decoration: none; }
+.nav-links { list-style: none; display: flex; gap: 25px; position: absolute; left: 50%; transform: translateX(-50%); }
+.nav-links a { color: white; text-decoration: none; font-size: 18px; font-weight: 700; }
+.nav-right i { font-size: 28px; color: white; cursor: pointer; }
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 50%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+    transition: right 0.35s ease;
+    z-index: 998;
+}
+.mobile-menu.open { right: 0; }
+.mobile-menu a { color: white; text-decoration: none; font-size: 20px; margin: 20px 0; }
+
+/* Ana kutu */
+.kutum {
+    width: 900px;
+    min-height: 900px; 
+    background-color: black;
+    border-radius: 8px;
+    margin: 120px auto 50px auto;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+}
+.hakkımızda-resim {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.hakkımızda-yazi {
+    color: #fff;
+    font-size: 22px;
+    line-height: 1.6;
+    text-align: left;
+    margin-top: 15px; 
+}
+
+
+.alt-ve-new-container {
+    display: flex;
+    justify-content: space-between; 
+    margin: 60px;
+    gap: 40px;
+}
+
+.new-box {
+    width: 400px;
+    height: 500px;
+    background-color: #000;
+    border-radius: 8px;
+    display: flex;
+    margin-top: 60px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.new-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.new-box-text {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 20px;
+}
+
+/* 9 resim grid */
+.alt-resimler-box {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    gap: 20px;
+}
+.alt-resimler-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Quote Section */
+.quote-section {
+    width: 100%;
+    background-color: #101010;
+    margin-top: 50px;
+    padding: 140px 0 50px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.quote-img {
+    position: absolute;
+    top: -110px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 8px solid #000;
+}
+.quote-text {
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.5;
+    margin-top: 120px;
+}
+.quote-name {
+    font-size: 22px;
+    color: white;
+    margin-top: 15px;
+    font-weight: 700;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-left">
+          <a href="https://www.instagram.com/sinem_codes/" target="_blank">
+    <i class="fab fa-instagram"></i> </a>
+
+    <a href="https://wa.me/905318720081" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+    </div>
+    <nav class="nav-links">
+        <a href="anasayfa.html">ANASAYFA</a>
+        <a href="blok.html">BLOG</a>
+        <a href="hakkımdaa.html">HAKKIMDA</a>
+        <a href="iletişim.html">İLETİŞİM</a>
+    </nav>
+    <div class="nav-right">
+        <i id="hamburgerBtn" class="fa fa-bars"></i>
+    </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="anasayfa.html">ANASAYFA</a>
+    <a href="blok.html">BLOG</a>
+    <a href="hakkimdaa.html">HAKKIMDA</a>
+    <a href="iletişim.html">İLETİŞİM</a>
+</div>
+
+<script>
+const btn = document.getElementById('hamburgerBtn');
+const menu = document.getElementById('mobileMenu');
+btn.addEventListener('click', () => { menu.classList.toggle('open'); });
+</script>
+
+<!-- Ana Kutum -->
+<div class="kutum">
+    <img src="sinos13.jpeg" class="hakkımızda-resim">
+    <div class="hakkımızda-yazi">
+        <p>Sinem Özhan Hakkında<br><br>
+   
+
+3 Ekim 2008’de Gaziantep’te doğan Sinem Özhan, köken olarak Adıyamanlı bir ailenin ferdi olsa da yaşamının büyük bölümünü Gaziantep’in kültürel çeşitliliği içinde geçirdi. Çocukluk döneminden itibaren teknolojiye ve üretmeye karşı yoğun bir merak duyan Sinem, yıllar içinde bu ilgisini bilinçli bir yönelim hâline getirdi.
+
+Eğitim hayatına Gaziantep’te başlayan Sinem, teknolojiye olan tutkusunun güçlenmesiyle bilişim alanına geçiş yaparak kendini daha doğru bir yolda buldu. Bu doğrultuda, Gaziantep Şehitkamil Merveşehir semtinde bulunan Nigar Ertürk Meslek ve Teknik Anadolu Lisesinin Bilişim Teknolojileri bölümünde eğitimine devam etti.
+
+Bugün 12. sınıf öğrencisi olan Sinem, sadece okulda değil, aynı zamanda profesyonel bir çalışma ortamında da kendini geliştirmeye devam ediyor. Yazılım ve yaratıcı düşünce alanındaki becerilerini ileri taşımak için Derin Fikirler Kreatifera Reklam Ajansı’nda staj yapıyor. Burada hem web hem mobil alanındaki projelerde aktif rol alıyor, gerçek iş deneyimi kazanarak kendi yolunu daha net çiziyor.
+
+Sinem için teknoloji, sadece bir meslek değil; üretmenin, hayal kurmanın ve geleceği şekillendirmenin modern bir yolu. Web ve mobil geliştirmeye duyduğu ilgi, onu sürekli araştırmaya, öğrenmeye ve yeni proje fikirleri üretmeye yönlendiriyor.
+
+Bununla birlikte Sinem’in kişiliğini tamamlayan bir başka alan da edebiyat… Özellikle şiir yazmak, onun için hem duyguların hem de içsel dünyanın en saf ifade biçimi. Şiirlerinde derinlik, samimiyet ve iç gözlem ön planda. Müziğe olan ilgisi ve seyahat etmeye duyduğu istek ise yaşamına ilham katıyor.
+
+Hem teknik hem sanatsal yanlarını bir arada taşıyan Sinem, hayatını iki güçlü alanın birleşimiyle şekillendiriyor:
+Kodun mantığı ve kelimenin duygusu…
+
+Gelecekte yazılım alanında profesyonelleşmeyi hedefleyen Sinem, bir yandan da kendi iç dünyasını şiirleriyle anlatmayı sürdürüyor. Yeniliklere açık, meraklı ve üretken yapısıyla hem teknoloji hem sanat dünyasında kendine özgü bir yer edinmeyi amaçlıyor.
+        </p>
+    </div>
+</div>
+
+
+
+<!-- BÜYÜK FOTOĞRAF + 9’LU GRID DÜZENİ -->
+<div style="
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 100px;
+">
+
+    <!-- SOL: BÜYÜK FOTO -->
+    <div style="
+        width: 550px;
+        height: 480px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    ">
+        <img src="sinem9.jpeg" 
+             style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+
+    <!-- SAĞ: 9’LU KARE FOTO -->
+    <div style="
+        display: grid;
+        grid-template-columns: repeat(3, 150px);
+        grid-template-rows: repeat(3, 150px);
+        gap: 20px;
+    ">
+        <img src="sinos1.jpeg" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+        <img src="sinos2.jpeg" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+        <img src="sinos12.jpeg" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+        <img src="sinos4.jpeg" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+        <img src="sinos5.jpeg" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+        <img src="sinos10.jpeg" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+        <img src="sinos7.jpeg" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+        <img src="sinos8.jpeg" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+        <img src="sinos11.jpeg" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+    </div>
+
+</div>
+
+<!-- Quote Section -->
+<div class="quote-section">
+    <img src="sinem8.jpeg" class="quote-img">
+    <p class="quote-text">
+        <u>Başaramamanın bedelini bir ömür ödeyemeyenler,<br>
+        başaramamanın bedelini bir ömür öderler.</u>
+    </p>
+    <p class="quote-name"><u>Sinem Özhan</u></p>
+</div>
+
+</body>
+</html>

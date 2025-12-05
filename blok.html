@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+  /* GENEL */
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+
+  /* NAVBAR */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+    padding: 0 10px;
+  }
+  .nav-left a { color: white; margin-right: 15px; font-size: 20px; text-decoration: none; }
+  .nav-links { list-style: none; display: flex; gap: 25px; position: absolute; left: 50%; transform: translateX(-50%); }
+  .nav-links a { color: white; text-decoration: none; font-size: 18px; font-weight: 700; }
+  .nav-right { display: flex; align-items: center; margin-right: 10px; }
+  .nav-right i { font-size: 28px; color: white; cursor: pointer; }
+
+  /* MOBİL MENÜ */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 20%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+    transition: right 0.35s ease;
+    z-index: 998;
+  }
+  .mobile-menu.open { right: 15px; }
+  .mobile-menu a { color: white; text-decoration: none; font-size: 20px; margin: 20px 0; }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #fff;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    gap: 50px;
+  }
+  .block {
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  }
+  .block h2 {
+    margin-top: 0;
+    color: #f39c12;
+    text-align: center;
+  }
+  .poem {
+    font-style: italic;
+    line-height: 1.6;
+    text-align: center;
+  }
+  .hobbies, .notes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  .hobby-card, .note-card {
+    background: #333;
+    padding: 15px 20px;
+    border-radius: 15px;
+    flex: 1 1 120px;
+    text-align: center;
+    transition: 0.3s;
+  }
+  .hobby-card:hover, .note-card:hover {
+    transform: translateY(-5px);
+    background: #444;
+  }
+
+   .quote-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 150px;
+    z-index: 5;
+  }
+  .quote-card {
+    position: relative;
+    background-color: #1d1d1d;
+    width: 95%;
+    max-width: none;
+    width: 100%;
+    padding: 120px 0px 40px 0px;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+  }
+  .quote-img {
+    position: absolute;
+    top: -110px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid #1d1d1d;
+  }
+  .quote-text {
+    margin-top: 50px;
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  .quote-name {
+    margin-top: 25px;
+    font-size: 22px;
+    font-weight: 700;
+    opacity: 0.9;
+  }
+
+  
+</style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-left">
+             <a href="https://www.instagram.com/sinem_codes/" target="_blank">
+    <i class="fab fa-instagram"></i> </a>
+
+    <a href="https://wa.me/905318720081" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+  </div>
+
+<nav class="nav-links">
+    <a href="anasayfa.html">ANASAYFA</a>
+    <a href="blok.html">BLOG</a>
+    <a href="hakkimdaa.html">HAKKIMDA</a>
+    <a href="iletisim.html">İLETİŞİM</a>
+</nav>
+
+  <div class="nav-right">
+    <i id="hamburgerBtn" class="fa fa-bars" aria-label="Menüyü aç" aria-expanded="false"></i>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="anasayfa.html">ANASAYFA</a>
+  <a href="blok.html">BLOG</a>
+  <a href="hakkimdaa.html">HAKKIMDA</a>
+  <a href="iletisim.html">İLETİŞİM</a>
+</div>
+
+<script>
+  const btn = document.getElementById('hamburgerBtn');
+  const menu = document.getElementById('mobileMenu');
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('open');
+    const isOpen = menu.classList.contains('open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    menu.setAttribute('aria-hidden', String(!isOpen));
+  });
+</script>
+
+
+<div class="container">
+
+  <!-- Şiir Alanı -->
+  <div class="block">
+    <h2>Şiirim</h2>
+    <p class="poem">
+    Gecenin sabahı arayışı<br>
+    Sabahın geceden kaçışı gibi<br>
+    Gün doğuyor kalbimizde<br>
+    Yaratılan mucizeyle...
+    </p>
+  </div>
+
+  <!-- Hobiler / İlgi Alanları -->
+  <div class="block">
+    <h2>Hobilerim ve İlgi Alanlarım</h2>
+    <div class="hobbies">
+      <div class="hobby-card"><i class="fas fa-code"></i> Web Geliştirme</div>
+      <div class="hobby-card"><i class="fas fa-mobile-alt"></i> Mobil Geliştirme</div>
+      <div class="hobby-card"><i class="fas fa-book"></i> Şiir Yazmak</div>
+      <div class="hobby-card"><i class="fas fa-music"></i> Müzik</div>
+      <div class="hobby-card"><i class="fas fa-camera"></i> Fotoğrafçılık</div>
+    </div>
+  </div>
+
+  <!-- Blok Yazıları / Notlar -->
+  <div class="block">
+    <h2>Blok Yazılarım</h2>
+    <div class="notes">
+      <div class="note-card">Bugün öğrendiklerim...</div>
+      <div class="note-card">İlham aldığım alıntı...</div>
+      <div class="note-card">Küçük bir not...</div>
+      <div class="note-card">Web ve mobil fikirlerim...</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="quote-section">
+    <div class="quote-card">
+        <img src="sinem8.jpeg" class="quote-img" alt="foto">
+        <p class="quote-text">
+            Başaramamanın bedelini bir ömür ödeyemeyenler,<br><u>
+            başaramamanın bedelini bir ömür öderler.<u>
+        </p>
+        <p class="quote-name"><u>Sinem Özhan<u></p>
+    </div>
+</div>
+
+</body>
+</html>
+
