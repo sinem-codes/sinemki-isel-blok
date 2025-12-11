@@ -1,1 +1,1 @@
-# sinem kisel-blok
+# sinem -kisel-blok
